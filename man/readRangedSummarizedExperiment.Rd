@@ -7,18 +7,18 @@
 readRangedSummarizedExperiment(path, metadata, ...)
 }
 \arguments{
-\item{path}{String containing a path to a directory, itself created using the \code{\link{saveObject}} method for \linkS4class{RangedSummarizedExperiment} objects.}
+\item{path}{String containing a path to a directory, itself created using the \code{\link[alabaster.base]{saveObject}} method for RangedSummarizedExperiment objects.}
 
-\item{metadata}{Named list of metadata for this object, see \code{\link{readObjectFile}} for details.}
+\item{metadata}{Named list of metadata for this object, see \code{\link[alabaster.base]{readObjectFile}} for details.}
 
-\item{...}{Further arguments passed to \code{\link{readSummarizedExperiment}} and internal \code{\link{altReadObject}} calls.}
+\item{...}{Further arguments passed to \code{\link{readSummarizedExperiment}} and internal \code{\link[alabaster.base]{altReadObject}} calls.}
 }
 \value{
-A \linkS4class{RangedSummarizedExperiment} object.
+A RangedSummarizedExperiment object.
 }
 \description{
-Read a \linkS4class{RangedSummarizedExperiment} from its on-disk representation.
-This is usually not directly called by users, but is instead called by dispatch in \code{\link{readObject}}.
+Read a \link[SummarizedExperiment]{RangedSummarizedExperiment} from its on-disk representation.
+This is usually not directly called by users, but is instead called by dispatch in \code{\link[alabaster.base]{readObject}}.
 }
 \examples{
 # Mocking up an experiment:

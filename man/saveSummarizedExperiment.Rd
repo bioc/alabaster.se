@@ -9,25 +9,25 @@
 \S4method{saveObject}{SummarizedExperiment}(x, path, SummarizedExperiment.allow.dataframe.assay = FALSE, ...)
 }
 \arguments{
-\item{x}{A \linkS4class{SummarizedExperiment} object or one of its subclasses.}
+\item{x}{A \link[SummarizedExperiment]{SummarizedExperiment} object or one of its subclasses.}
 
 \item{path}{String containing the path to a directory in which to save \code{x}.}
 
-\item{SummarizedExperiment.allow.dataframe.assay}{Logical scalar indicating whether to allow data frames as assays of \code{x}.}
+\item{SummarizedExperiment.allow.dataframe.assay}{Logical scalar indicating whether to allow \link[S4Vectors]{DataFrame}s as assays of \code{x}.}
 
-\item{...}{Further arguments to pass to internal \code{\link{altSaveObject}} calls.}
+\item{...}{Further arguments to pass to internal \code{\link[alabaster.base]{altSaveObject}} calls.}
 }
 \value{
 \code{x} is saved into \code{path} and \code{NULL} is invisibly returned.
 }
 \description{
-Save a \linkS4class{SummarizedExperiment} to its on-disk representation.
+Save a \link[SummarizedExperiment]{SummarizedExperiment} to its on-disk representation.
 }
 \details{
-By default, we consider the presence of data frames in the assays to be an error.
+By default, we consider the presence of \link[S4Vectors]{DataFrame}s in the assays to be an error.
 Users should coerce these into an appropriate matrix type, e.g., a dense matrix or a sparse dgCMatrix.
-If a DataFrame as an assay is truly desired, users may set \code{\link{options}(alabaster.se.reject_data.frames=FALSE)} to skip the error.
-Note that this only works for \linkS4class{DataFrame} objects - data.frame objects will not be saved correctly.
+If a DataFrame as an assay is truly desired, users may set \code{SummarizedExperiment.allow.dataframe.assay=TRUE} to skip the error.
+Note that this only works for \link[S4Vectors]{DataFrame} objects - data.frame objects will still cause an error to be raised.
 }
 \examples{
 mat <- matrix(rpois(10000, 10), ncol=10)

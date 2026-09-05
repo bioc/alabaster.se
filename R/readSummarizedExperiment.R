@@ -1,13 +1,13 @@
 #' Read a SummarizedExperiment from disk
 #'
-#' Read a \linkS4class{SummarizedExperiment} from its on-disk representation.
-#' This is usually not directly called by users, but is instead called by dispatch in \code{\link{readObject}}.
+#' Read a \link[SummarizedExperiment]{SummarizedExperiment} from its on-disk representation.
+#' This is usually not directly called by users, but is instead called by dispatch in \code{\link[alabaster.base]{readObject}}.
 #'
-#' @param path String containing a path to a directory, itself created using the \code{\link{saveObject}} method for \linkS4class{SummarizedExperiment} objects.
-#' @param metadata Named list of metadata for this object, see \code{\link{readObjectFile}} for details.
-#' @param ... Further arguments passed to internal \code{\link{altReadObject}} calls.
+#' @param path String containing a path to a directory, itself created using the \code{\link[alabaster.base]{saveObject}} method for SummarizedExperiment objects.
+#' @param metadata Named list of metadata for this object, see \code{\link[alabaster.base]{readObjectFile}} for details.
+#' @param ... Further arguments passed to internal \code{\link[alabaster.base]{altReadObject}} calls.
 #' 
-#' @return A \linkS4class{SummarizedExperiment} object.
+#' @return A SummarizedExperiment object.
 #'
 #' @author Aaron Lun
 #' @seealso
@@ -77,6 +77,7 @@ readSummarizedExperiment <- function(path, metadata, ...) {
 
 #' @export
 loadSummarizedExperiment <- function(exp.info, project) {
+    .Deprecated(old = "loadSummarizedExperiment", new = "readSummarizedExperiment")
     all.assays <- list()
     for (y in seq_along(exp.info$summarized_experiment$assays)) {
         cur.ass <- exp.info$summarized_experiment$assays[[y]]

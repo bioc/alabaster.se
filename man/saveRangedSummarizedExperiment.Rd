@@ -9,17 +9,17 @@
 \S4method{saveObject}{RangedSummarizedExperiment}(x, path, ...)
 }
 \arguments{
-\item{x}{A \linkS4class{RangedSummarizedExperiment} object or one of its subclasses.}
+\item{x}{A \link[SummarizedExperiment]{RangedSummarizedExperiment} object or one of its subclasses.}
 
 \item{path}{String containing the path to a directory in which to save \code{x}.}
 
-\item{...}{Further arguments to pass to \code{"\link{saveObject,SummarizedExperiment-method}"} and internal \code{\link{altSaveObject}} calls.}
+\item{...}{Further arguments to pass to \code{"\link{saveObject,SummarizedExperiment-method}"} and internal \code{\link[alabaster.base]{altSaveObject}} calls.}
 }
 \value{
 \code{x} is saved into \code{path} and \code{NULL} is invisibly returned.
 }
 \description{
-Save a \linkS4class{RangedSummarizedExperiment} to its on-disk representation.
+Save a \link[SummarizedExperiment]{RangedSummarizedExperiment} to its on-disk representation.
 }
 \examples{
 mat <- matrix(rpois(10000, 10), ncol=10)

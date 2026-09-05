@@ -7,20 +7,20 @@
 emptyRowRanges(x)
 }
 \arguments{
-\item{x}{A \linkS4class{RangedSummarizedExperiment} object or the contents of its \code{\link{rowRanges}}.}
+\item{x}{A \link[SummarizedExperiment]{RangedSummarizedExperiment} object or the contents of its \code{rowRanges}.}
 }
 \value{
 A logical scalar indicating whether \code{x} has empty \code{rowRanges}.
 }
 \description{
-Check the \code{\link{rowRanges}} of a \linkS4class{RangedSummarizedExperiment} is empty, 
-i.e., a \linkS4class{GRangesList} with no ranges.
+Check the \code{\link[SummarizedExperiment]{rowRanges}} of a \link[SummarizedExperiment]{RangedSummarizedExperiment} is empty, 
+i.e., a \link[GenomicRanges]{GRangesList} with no ranges.
 }
 \details{
-Metadata in \code{\link{mcols}} is ignored for the purpose of this discussion, 
-as this can be moved to the \code{\link{rowData}(x)} of the base \linkS4class{SummarizedExperiment} class without loss.
-In other words, non-empty \code{\link{mcols}} will not be used to determine that the \code{rowRanges} is not empty.
-However, non-empty fields in the \code{\link{metadata}} or in the inner \code{\link{mcols}} of the \linkS4class{GRanges} will trigger a non-emptiness decision.
+Metadata in \code{\link[S4Vectors]{mcols}} is ignored for the purpose of this discussion, 
+as this can be moved to the \code{\link[SummarizedExperiment]{rowData}(x)} of the base SummarizedExperiment class without loss.
+In other words, non-empty \code{mcols} will not be used to determine that the \code{rowRanges} is not empty.
+However, non-empty fields in the \code{\link[S4Vectors]{metadata}} or in the inner \code{mcols} of the \link[GenomicRanges]{GRanges} will trigger a non-emptiness decision.
 }
 \examples{
 emptyRowRanges(SummarizedExperiment())

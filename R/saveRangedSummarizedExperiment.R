@@ -1,10 +1,10 @@
 #' Save a RangedSummarizedExperiment to disk
 #'
-#' Save a \linkS4class{RangedSummarizedExperiment} to its on-disk representation.
+#' Save a \link[SummarizedExperiment]{RangedSummarizedExperiment} to its on-disk representation.
 #' 
-#' @param x A \linkS4class{RangedSummarizedExperiment} object or one of its subclasses.
+#' @param x A \link[SummarizedExperiment]{RangedSummarizedExperiment} object or one of its subclasses.
 #' @inheritParams alabaster.base::saveObject
-#' @param ... Further arguments to pass to \code{"\link{saveObject,SummarizedExperiment-method}"} and internal \code{\link{altSaveObject}} calls.
+#' @param ... Further arguments to pass to \code{"\link{saveObject,SummarizedExperiment-method}"} and internal \code{\link[alabaster.base]{altSaveObject}} calls.
 #'
 #' @return \code{x} is saved into \code{path} and \code{NULL} is invisibly returned.
 #'
@@ -37,8 +37,7 @@ NULL
 #' @rdname saveRangedSummarizedExperiment
 #' @importFrom SummarizedExperiment rowRanges
 #' @importFrom S4Vectors mcols<-
-setMethod("saveObject", "RangedSummarizedExperiment", 
-function(x, path, ...) {
+setMethod("saveObject", "RangedSummarizedExperiment", function(x, path, ...) {
     # Note that the use of callNextMethod() means that we cannot respond to
     # application overrides for the SummarizedExperiment base class. Developers
     # should just pretend that saveObject,RSE-method copied all of the code

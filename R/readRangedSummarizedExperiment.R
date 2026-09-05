@@ -1,13 +1,13 @@
 #' Read a RangedSummarizedExperiment from disk
 #'
-#' Read a \linkS4class{RangedSummarizedExperiment} from its on-disk representation.
-#' This is usually not directly called by users, but is instead called by dispatch in \code{\link{readObject}}.
+#' Read a \link[SummarizedExperiment]{RangedSummarizedExperiment} from its on-disk representation.
+#' This is usually not directly called by users, but is instead called by dispatch in \code{\link[alabaster.base]{readObject}}.
 #'
-#' @param path String containing a path to a directory, itself created using the \code{\link{saveObject}} method for \linkS4class{RangedSummarizedExperiment} objects.
-#' @param metadata Named list of metadata for this object, see \code{\link{readObjectFile}} for details.
-#' @param ... Further arguments passed to \code{\link{readSummarizedExperiment}} and internal \code{\link{altReadObject}} calls.
+#' @param path String containing a path to a directory, itself created using the \code{\link[alabaster.base]{saveObject}} method for RangedSummarizedExperiment objects.
+#' @param metadata Named list of metadata for this object, see \code{\link[alabaster.base]{readObjectFile}} for details.
+#' @param ... Further arguments passed to \code{\link{readSummarizedExperiment}} and internal \code{\link[alabaster.base]{altReadObject}} calls.
 #' 
-#' @return A \linkS4class{RangedSummarizedExperiment} object.
+#' @return A RangedSummarizedExperiment object.
 #'
 #' @author Aaron Lun
 #' @seealso
